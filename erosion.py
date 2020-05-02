@@ -63,12 +63,14 @@ def evolution(fname, Niterations, Nrealizations, coupling_period):
     if Nrealizations < 1:
         Nrealizations = 1
     node, elem = readfile(fname)
+    z = np.copy(node[:, 2])
     ave = np.zeros(len(node))
     for realization in range(Nrealizations):
         print('Realization '+str(realization+1))
+        node[:, 2] = np.copy(z)
         for current_iteration_num in range(Niterations):
             rdm = np.random.random(len(elem))
-            r = np.ones(len(elem))/10
+            r = np.ones(len(elem))/2
             risk = 0.5*(1 + erf(4*(r - 1)/np.sqrt(r**2 + 1)/np.sqrt(2)))
             node[:,2] = erosion(node, elem, rdm, risk, current_iteration_num, coupling_period)
             sys.stdout.write('\rIteration '+str(current_iteration_num))
@@ -156,5 +158,5 @@ def main(Niterations, Nrealizations, onlyIC=False):
 
   
 if __name__ == '__main__':
-    main(Niterations=201, Nrealizations=100, onlyIC=False)
+    main(Niterations=101, Nrealizations=100, onlyIC=False)
 
