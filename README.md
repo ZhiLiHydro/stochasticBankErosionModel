@@ -1,4 +1,4 @@
-# stochastic_bank_erosion_demo
+# Stochastic bank erosion demo, with hydrodynamic and morphodynamic model peeled off
 
 
 ## Initial Conditions
