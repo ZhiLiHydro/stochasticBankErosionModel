@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10215536.svg)](https://doi.org/10.5281/zenodo.10215536)
+
 ### `all.f`: source code of the stochastic bank erosion model in Fortran (Telemac v7)
 
 ### `example-maiqu_tau1`: model input files of the Maiqu River cutoff case (Telemac v7)
